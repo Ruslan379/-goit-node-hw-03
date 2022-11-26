@@ -9,9 +9,11 @@ const mongoose = require("mongoose");
 
 // const { DB_HOST } = require("./config.js");
 
-const { DB_HOST } = process.env;
+const { DB_HOST, PORT = 3000 } = process.env;
 
 mongoose.connect(DB_HOST)
+  .then(() => app.listen(PORT))
+  .then(() => console.log(`Server is running on the port: ${PORT}`.bgGreen.red))
   .then(() => console.log("Database connect"))
   .catch(error => {
     console.log(error.message);
@@ -22,13 +24,13 @@ mongoose.connect(DB_HOST)
 
 
 //----------------------------------------------------------------
-const { PORT = 3000 } = process.env
+// const { PORT = 3000 } = process.env
 
-app.listen(PORT, (err) => {
-  if (err) console.error("Error at server launch", err.message);
-  console.log(`Server is running on the port: ${PORT}`.bgGreen.red);
-  lineBreak();
-});
+// app.listen(PORT, (err) => {
+//   if (err) console.error("Error at server launch", err.message);
+//   console.log(`Server is running on the port: ${PORT}`.bgGreen.red);
+//   lineBreak();
+// });
 
 
 
