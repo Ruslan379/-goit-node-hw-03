@@ -12,7 +12,10 @@ const DB_HOST1 = "mongodb+srv://Ruslan:SiaLzikXKL7dkvK2@cluster379.kq6zkfp.mongo
 const DB_HOST = "mongodb+srv://Ruslan:SiaLzikXKL7dkvK2@cluster379.kq6zkfp.mongodb.net/db-contacts?retryWrites=true&w=majority";
 mongoose.connect(DB_HOST)
   .then(() => console.log("Database connect"))
-  .catch(error => console.log(error.message))
+  .catch(error => {
+    console.log(error.message);
+    process.exit(1); //? закрыть все неиспользуемые процессы
+  })
 
 //----------------------------------------------------------------
 const app = express()
