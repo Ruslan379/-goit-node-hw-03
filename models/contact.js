@@ -24,7 +24,7 @@ const contactSchema = Schema({
         type: Boolean,
         default: false,
     },
-}, { versionKey: false, timestamp: true });
+}, { versionKey: false, timestamps: true });
 
 
 //* ++++++++++++++++++++++ Схемы ВАЛИДАЦИИ Joi +++++++++++++++++++++++++
