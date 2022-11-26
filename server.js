@@ -15,6 +15,7 @@ mongoose.connect(DB_HOST)
   .then(() => app.listen(PORT))
   .then(() => console.log(`Server is running on the port: ${PORT}`.bgGreen.red))
   .then(() => console.log("Database connection successful"))
+  .then(() => lineBreak())
   .catch(error => {
     console.log(error.message);
     process.exit(1); //? закрыть все неиспользуемые процессы

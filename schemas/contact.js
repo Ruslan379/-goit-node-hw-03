@@ -1,50 +1,57 @@
-const Joi = require('joi')
+// const Joi = require('joi')
 
 
 
-//* ++++++++++++++++++++++ Схемы ВАЛИДАЦИИ Joi +++++++++++++++++++++++++
-const contactSchemaPostPut = Joi.object({
-    name: Joi.string()
-        // .alphanum()
-        .min(3)
-        .max(30)
-        .required(),
+// //* ++++++++++++++++++++++ Схемы ВАЛИДАЦИИ Joi +++++++++++++++++++++++++
+// const contactSchemaPostPut = Joi.object({
+//     name: Joi.string()
+//         // .alphanum()
+//         .min(3)
+//         .max(30)
+//         .required(),
 
-    email: Joi.string()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'ua', 'org',] } })
-        .required(),
+//     email: Joi.string()
+//         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'ua', 'org',] } })
+//         .required(),
 
-    phone: Joi.string()
-        // .alphanum()
-        .min(5)
-        .max(14)
-        .required(),
-});
+//     phone: Joi.string()
+//         // .alphanum()
+//         .min(5)
+//         .max(14)
+//         .required(),
 
-//--------------------------------------------------------------------
-const contactSchemaPatch = Joi.object({
-    name: Joi.string()
-        // .alphanum()
-        .min(3)
-        .max(30)
-        .optional(),
+//     favorite: Joi.boolean()
+//         .optional(),
+// });
 
-    email: Joi.string()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'ua', 'org',] } })
-        .optional(),
+// //--------------------------------------------------------------------
+// const contactSchemaPatch = Joi.object({
+//     name: Joi.string()
+//         // .alphanum()
+//         .min(3)
+//         .max(30)
+//         .optional(),
 
-    phone: Joi.string()
-        // .alphanum()
-        .min(5)
-        .max(14)
-        .optional(),
-});
-//* _______________________ Схемы ВАЛИДАЦИИ Joi _______________________
+//     email: Joi.string()
+//         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'ua', 'org',] } })
+//         .optional(),
+
+//     phone: Joi.string()
+//         // .alphanum()
+//         .min(5)
+//         .max(14)
+//         .optional(),
+
+//     favorite: Joi.boolean()
+//         .optional(),
+
+// });
+// //* _______________________ Схемы ВАЛИДАЦИИ Joi _______________________
 
 
-// module.exports = contactSchemaPostPut
+// // module.exports = contactSchemaPostPut
 
-module.exports = {
-    contactSchemaPostPut,
-    contactSchemaPatch
-}
+// module.exports = {
+//     contactSchemaPostPut,
+//     contactSchemaPatch
+// }

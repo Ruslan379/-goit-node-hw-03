@@ -2,12 +2,15 @@ const express = require('express')
 const router = express.Router()
 
 const { validation, ctrlWrapper } = require("../../middlewares")
-const { contactSchema } = require("../../schemas")
+// const { contactSchema } = require("../../schemas")
+const { Contact } = require("../../models");
 const { contacts: ctrl } = require("../../controllers")
 
-const validateMiddlewarePostPut = validation(contactSchema.contactSchemaPostPut)
-const validateMiddlewarePatch = validation(contactSchema.contactSchemaPatch)
+// const validateMiddlewarePostPut = validation(contactSchema.contactSchemaPostPut)
+// const validateMiddlewarePatch = validation(contactSchema.contactSchemaPatch)
 
+const validateMiddlewarePostPut = validation(Contact.contactJoiSchemaPostPut)
+const validateMiddlewarePatch = validation(Contact.contactJoiSchemaPatch)
 
 //-----------------------------------------------------------------------------
 //! 1. Получение списка ВСЕХ КОНТАКТОВ
