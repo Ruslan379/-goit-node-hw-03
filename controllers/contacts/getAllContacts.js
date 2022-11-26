@@ -19,7 +19,7 @@ module.exports = getAllContacts;
 
 
 
-c
+
 // const contactsOperations = require("../../models/contacts")
 
 
