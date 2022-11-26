@@ -1,11 +1,11 @@
 //? +++++++++++++++++++  mongoose +++++++++++++++++++
+const { NotFound } = require('http-errors')
 const { Contact } = require("../../models");
 
 
 //-----------------------------------------------------------------------------
 const getContactById = async (req, res, next) => {
     const { contactId } = req.params;
-    console.log();
     // const contact = await Contact.findOne({ _id: contactId });
     const contact = await Contact.findById(contactId);
 
