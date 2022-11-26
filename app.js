@@ -6,21 +6,22 @@ require("colors");
 
 const contactsRouter = require('./routes/api/contacts')
 
-//? mongoose
-const mongoose = require("mongoose");
-// const DB_HOST1 = "mongodb+srv://Ruslan:SiaLzikXKL7dkvK2@cluster379.kq6zkfp.mongodb.net/online_shop?retryWrites=true&w=majority";
-// const DB_HOST = "mongodb+srv://Ruslan:SiaLzikXKL7dkvK2@cluster379.kq6zkfp.mongodb.net/db-contacts?retryWrites=true&w=majority";
+// //? +++++++++++++++++++  mongoose +++++++++++++++++++
+// const mongoose = require("mongoose");
+// // const DB_HOST1 = "mongodb+srv://Ruslan:SiaLzikXKL7dkvK2@cluster379.kq6zkfp.mongodb.net/online_shop?retryWrites=true&w=majority";
+// // const DB_HOST = "mongodb+srv://Ruslan:SiaLzikXKL7dkvK2@cluster379.kq6zkfp.mongodb.net/db-contacts?retryWrites=true&w=majority";
 
-// const { DB_HOST } = require("./config.js");
+// // const { DB_HOST } = require("./config.js");
 
-const { DB_HOST } = process.env;
+// const { DB_HOST } = process.env;
 
-mongoose.connect(DB_HOST)
-  .then(() => console.log("Database connect"))
-  .catch(error => {
-    console.log(error.message);
-    process.exit(1); //? закрыть все неиспользуемые процессы
-  })
+// mongoose.connect(DB_HOST)
+//   .then(() => console.log("Database connect"))
+//   .catch(error => {
+//     console.log(error.message);
+//     process.exit(1); //? закрыть все неиспользуемые процессы
+//   });
+// //? _____________________  mongoose _____________________
 
 //----------------------------------------------------------------
 const app = express()
