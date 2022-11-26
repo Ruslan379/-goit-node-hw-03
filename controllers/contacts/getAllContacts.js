@@ -1,10 +1,10 @@
 //? +++++++++++++++++++  mongoose +++++++++++++++++++
-const { Contact } = require("../../models");
+const { Contact } = require("../../models/contact.js");
 
 
 //-----------------------------------------------------------------------------
 const getAllContacts = async (req, res, next) => {
-    const contacts = await Contact.Contact.find({});
+    const contacts = await Contact.find({});
 
     res.status(200).json({
         status: "success",

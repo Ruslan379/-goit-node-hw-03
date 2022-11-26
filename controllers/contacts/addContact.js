@@ -1,10 +1,10 @@
 //? +++++++++++++++++++  mongoose +++++++++++++++++++
-const { Contact } = require("../../models");
+const { Contact } = require("../../models/contact.js");
 
 
 //-----------------------------------------------------------------------------
 const addContact = async (req, res, next) => {
-    const contact = await Contact.Contact.create(req.body);
+    const contact = await Contact.create(req.body);
 
     res.status(201).json({
         status: "success",
