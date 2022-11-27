@@ -8,14 +8,21 @@ const updatePatchContactFavorite = async (req, res, next) => {
     const { contactId } = req.params;
     const { favorite } = req.body
 
-    let contact = null;
-    if (favorite === false || favorite === true) {
-        contact = await Contact.findByIdAndUpdate(contactId, { favorite }, { new: true });
-    } else {
+    //! Проверка условия "Если body нет" - 1-ый вариант
+    // let contact = null;
+    // if (favorite === false || favorite === true) {
+    //     contact = await Contact.findByIdAndUpdate(contactId, { favorite }, { new: true });
+    // } else {
+    //     throw new BadRequest("missing field favorite")
+    // };
+    // const contact = await Contact.findByIdAndUpdate(contactId, { favorite }, { new: true });
+
+    //! Проверка условия "Если body нет" - 2-ой вариант
+    if (!(favorite === false || favorite === true)) {
         throw new BadRequest("missing field favorite")
     }
 
-    // const contact = await Contact.findByIdAndUpdate(contactId, { favorite }, { new: true });
+    const contact = await Contact.findByIdAndUpdate(contactId, { favorite }, { new: true });
 
     if (!contact) {
         throw new NotFound(`Contact wiht id:'${contactId}' not found`)
