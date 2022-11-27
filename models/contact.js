@@ -69,7 +69,12 @@ const contactJoiSchemaPatch = Joi.object({
 
     favorite: Joi.bool()
         .optional(),
+});
 
+//--------------------------------------------------------------------
+const contactJoiSchemaPatchFavorite = Joi.object({
+    favorite: Joi.bool()
+        .required(),
 });
 //* _______________________ Схемы ВАЛИДАЦИИ Joi _______________________
 
@@ -81,7 +86,8 @@ const Contact = model("contact", contactSchema);
 module.exports = {
     Contact,
     contactJoiSchemaPostPut,
-    contactJoiSchemaPatch
+    contactJoiSchemaPatch,
+    contactJoiSchemaPatchFavorite
 };
 
 //? _____________________  mongoose _____________________
