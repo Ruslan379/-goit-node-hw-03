@@ -7,6 +7,7 @@ const { Contact } = require("../../models");
 const updatePatchContact = async (req, res, next) => {
     const { contactId } = req.params;
 
+    //! Проверка условия "Если body нет" 
     if (!Object.keys(req.body).length) {
         throw new BadRequest(`missing all fields`)
     }
