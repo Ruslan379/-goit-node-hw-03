@@ -50,8 +50,8 @@ router.patch("/:contactId", validateMiddlewarePatch, ctrlWrapper(ctrl.updatePatc
 
 
 //! 4-3. PATCH-Обновление поле статуса favorite по id
-router.patch("/:contactId/favorite", ctrlWrapper(ctrl.updatePatchContactFavorite));
-// router.patch("/:contactId/favorite", validateMiddlewarePatchFavorite, ctrlWrapper(ctrl.updatePatchContactFavorite));
+// router.patch("/:contactId/favorite", ctrlWrapper(ctrl.updatePatchContactFavorite));
+router.patch("/:contactId/favorite", validateMiddlewarePatchFavorite, ctrlWrapper(ctrl.updatePatchContactFavorite));
 
 
 //! 5. Удаление ОДНОГО КОНТАКТА по id
