@@ -80,7 +80,8 @@ const contactJoiSchemaPatchFavorite = Joi.object({
 
 
 //? Создаём МОДЕЛЬ:
-const Contact = model("contact", contactSchema);
+// const Contact = model("contact", contactSchema); //! DB_HOST
+const Contact = model("product", contactSchema); //! DB_HOST1
 
 
 module.exports = {
