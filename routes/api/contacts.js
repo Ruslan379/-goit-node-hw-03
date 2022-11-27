@@ -38,8 +38,8 @@ router.get('/:contactId', ctrlWrapper(ctrl.getContactById))
 
 
 //! 3. Создание НОВОГО ПОЛЬЗОВАТЕЛЯ
-router.post("/", ctrlWrapper(ctrl.addContact));
-// router.post("/", validateMiddlewarePostPut, ctrlWrapper(ctrl.addContact));
+// router.post("/", ctrlWrapper(ctrl.addContact));
+router.post("/", validateMiddlewarePostPut, ctrlWrapper(ctrl.addContact));
 
 
 //! 4-1. PUT-Обновление ОДНОГО КОНТАКТА по id
