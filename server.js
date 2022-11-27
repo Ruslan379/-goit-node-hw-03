@@ -11,8 +11,9 @@ const mongoose = require("mongoose");
 
 const { DB_HOST, DB_HOST1, PORT = 3000 } = process.env;
 
-mongoose.connect(DB_HOST1)
+mongoose.connect(DB_HOST)
   .then(() => app.listen(PORT))
+  .then(() => lineBreak())
   .then(() => console.log(`Server is running on the port: ${PORT}`.bgGreen.red))
   .then(() => console.log("Database connection successful"))
   .then(() => lineBreak())

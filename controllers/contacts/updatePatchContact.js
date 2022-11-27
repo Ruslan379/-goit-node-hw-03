@@ -6,7 +6,6 @@ const { Contact } = require("../../models");
 //-----------------------------------------------------------------------------
 const updatePatchContact = async (req, res, next) => {
     const { contactId } = req.params;
-    console.log("[req.body].length:", [req.body].length); //!
 
     if (!Object.keys(req.body).length) {
         throw new BadRequest(`missing all fields`)

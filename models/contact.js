@@ -79,9 +79,9 @@ const contactJoiSchemaPatchFavorite = Joi.object({
 //* _______________________ Схемы ВАЛИДАЦИИ Joi _______________________
 
 
-//? Создаём МОДЕЛЬ:
-// const Contact = model("contact", contactSchema); //! DB_HOST
-const Contact = model("product", contactSchema); //! DB_HOST1
+//? Создаем МОДЕЛЬ:
+const Contact = model("contact", contactSchema); //! DB_HOST
+// const Contact = model("product", contactSchema); //! DB_HOST1
 
 
 module.exports = {
